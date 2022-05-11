@@ -4,45 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./index.css">
     <title>Formulario-JS</title>
 </head>
 <body>
     <section>
         <div class="container">
-            <div class="header">
-                <h2>Criar uma conta</h2>
+            <div class="quadrado">
+                <div class="header">
+                    <h2>Cadastrar</h2>
+                </div>
+                <form id="form" class="form" >
+                    <div class="controle_form ">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" name="usuario" id="usuario">
+                        <small>Mensagem de erro</small>
+                    </div>
+               
+               
+                    <div class="controle_form ">
+                        <label for="Email">Email</label>
+                        <input type="email" name="Email" id="email">
+                        <small>Mensagem de erro</small>
+                    </div>
+               
+             
+                    <div class="controle_form">
+                        <label for="Senha">Senha</label>
+                        <input type="password" name="Senha" id="senha">
+                        <small>Mensagem de erro</small>
+                    </div>
+             
+                    <div class="controle_form">
+                        <label for="Confirmação de Senha">Confirmação de Senha</label>
+                        <input type="password" name="Confirmação de Senha" id="confirmacao_senha">
+                        <small>Mensagem de erro</small>
+                    </div>
+                    <button id="botao" type="submit">Cadastrar</button>
+                </form>
+
             </div>
-            <form id="form" class="form" >
-                <div class="controle-form">
-                    <label for="usuario">Usuário</label>
-                    <input type="text" name="usuario">
-                    <small>Mensagem de erro</small>
-                </div>
-            </form>
-            <form id="form" class="form" >
-                <div class="controle-form">
-                    <label for="Email">Email</label>
-                    <input type="text" name="Email">
-                    <small>Mensagem de erro</small>
-                </div>
-            </form>
-            <form id="form" class="form" >
-                <div class="controle-form">
-                    <label for="Senha">Senha</label>
-                    <input type="text" name="Senha">
-                    <small>Mensagem de erro</small>
-                </div>
-            </form>
-            <form id="form" class="form" >
-                <div class="controle-form">
-                    <label for="Confirmação de Senha">Confirmação de Senha</label>
-                    <input type="text" name="Confirmação de Senha">
-                    <small>Mensagem de erro</small>
-                </div>
-            </form>
-            <button type="submit">Cadastrar</button>
         </div>
-    </div>
-    </section>
+        </div>
+     </section>
+    <script src="./index.js"></script>
+ </body>
 </html>
