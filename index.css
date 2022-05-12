@@ -1,52 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
-    <title>Formulario-JS</title>
-</head>
-<body>
-    <section>
-        <div class="container">
-            <div class="quadrado">
-                <div class="header">
-                    <h2>Cadastrar</h2>
-                </div>
-                <form id="form" class="form" >
-                    <div class="controle_form ">
-                        <label for="usuario">Usuário</label>
-                        <input type="text" name="usuario" id="usuario" onfocusout="Validation_usuario(usuario.value.trim())">
-                        <small>Mensagem de erro</small>
-                    </div>
-               
-               
-                    <div class="controle_form ">
-                        <label for="Email">Email</label>
-                        <input type="email" name="Email" id="email" onfocusout="Validation_email(email.value.trim())">
-                        <small>Mensagem de erro</small>
-                    </div>
-               
-             
-                    <div class="controle_form">
-                        <label for="Senha">Senha</label>
-                        <input type="password" name="Senha" id="senha" onfocusout="Validation_senha(senha.value.trim())">
-                        <small>Mensagem de erro</small>
-                    </div>
-             
-                    <div class="controle_form">
-                        <label for="Confirmação de Senha">Confirmação de Senha</label>
-                        <input type="password" name="Confirmação de Senha" id="confirmacao_senha" onfocusout="Validation_confirmacao(confirmacao_senha.value.trim(), senha.value.trim())">
-                        <small>Mensagem de erro</small>
-                    </div>
-                    <button id="botao" type="submit"   onclick="processChanges()">Cadastrar</button>
-                </form>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 
-            </div>
-        </div>
-        </div>
-     </section>
-    <script src="./index.js"></script>
- </body>
-</html>
+    justify-content: center;
+}
+body{
+    margin: 0;
+    background: linear-gradient(to left, #5e48b1 50%, #d67272 50%);
+    background-image: url("fundo.jpg");
+    background-size: cover;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.quadrado{
+    width: 527px;
+    height: 650px;
+    background: #7447b6;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+h2{
+    width: 206px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-indent: 1px;
+    color: #000000;
+}
+
+.container form{
+    width: 317px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;    
+    color: #000000;
+}
+button{
+    width: 316px;
+    height: 52px;
+    background: #ce6f9a;
+    border: 2px solid #000000;
+    border-radius: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin-top: 4px;
+    
+}
+
+button:disabled{
+    width: 316px;
+    height: 52px;
+    background: #9C9C9C;
+    border: 2px solid #A5A5A5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.64);
+    
+} 
+
+.controle_form input{
+    width: 307px;
+    height: 52px;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 7px;
+}
+.controle_form small{
+    visibility: hidden;
+}
+
+.controle_form.success input{
+ border: 3px solid #4ECA64
+}
+
+.controle_form.error input{
+    border: 3px solid #DB5A5A;
+}
+
+.controle_form.error small{
+    visibility: visible;
+    color :#DB5A5A;
+}
