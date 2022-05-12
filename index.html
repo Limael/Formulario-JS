@@ -17,30 +17,30 @@
                 <form id="form" class="form" >
                     <div class="controle_form ">
                         <label for="usuario">Usuário</label>
-                        <input type="text" name="usuario" id="usuario">
+                        <input type="text" name="usuario" id="usuario" onfocusout="Validation_usuario(usuario.value.trim())">
                         <small>Mensagem de erro</small>
                     </div>
                
                
                     <div class="controle_form ">
                         <label for="Email">Email</label>
-                        <input type="email" name="Email" id="email">
+                        <input type="email" name="Email" id="email" onfocusout="Validation_email(email.value.trim())">
                         <small>Mensagem de erro</small>
                     </div>
                
              
                     <div class="controle_form">
                         <label for="Senha">Senha</label>
-                        <input type="password" name="Senha" id="senha">
+                        <input type="password" name="Senha" id="senha" onfocusout="Validation_senha(senha.value.trim())">
                         <small>Mensagem de erro</small>
                     </div>
              
                     <div class="controle_form">
                         <label for="Confirmação de Senha">Confirmação de Senha</label>
-                        <input type="password" name="Confirmação de Senha" id="confirmacao_senha">
+                        <input type="password" name="Confirmação de Senha" id="confirmacao_senha" onfocusout="Validation_confirmacao(confirmacao_senha.value.trim(), senha.value.trim())">
                         <small>Mensagem de erro</small>
                     </div>
-                    <button id="botao" type="submit">Cadastrar</button>
+                    <button id="botao" type="submit" disabled  onclick="processChanges()">Cadastrar</button>
                 </form>
 
             </div>
