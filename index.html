@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Formulario-JS</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="quadrado">
+                <div class="header">
+                    <h2>Cadastrar</h2>
+                </div>
+                <form id="form" class="form" >
+                    <div class="controle_form ">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" name="usuario" id="usuario" onfocusout="Validation_usuario(usuario.value.trim())">
+                        <small>Mensagem de erro</small>
+                    </div>
+               
+               
+                    <div class="controle_form ">
+                        <label for="Email">Email</label>
+                        <input type="email" name="Email" id="email" onfocusout="Validation_email(email.value.trim())">
+                        <small>Mensagem de erro</small>
+                    </div>
+               
+             
+                    <div class="controle_form">
+                        <label for="Senha">Senha</label>
+                        <input type="password" name="Senha" id="senha" onfocusout="Validation_senha(senha.value.trim())">
+                        <small>Mensagem de erro</small>
+                    </div>
+             
+                    <div class="controle_form">
+                        <label for="Confirmação de Senha">Confirmação de Senha</label>
+                        <input type="password" name="Confirmação de Senha" id="confirmacao_senha" onfocusout="Validation_confirmacao(confirmacao_senha.value.trim(), senha.value.trim())">
+                        <small>Mensagem de erro</small>
+                    </div>
+                    <button id="botao" type="submit" disabled  onclick="processChanges()">Cadastrar</button>
+                </form>
+
+            </div>
+        </div>
+        </div>
+     </section>
+    <script src="./index.js"></script>
+ </body>
+</html>
