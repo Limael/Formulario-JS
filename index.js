@@ -3,9 +3,13 @@ const usuario = document.getElementById('usuario');
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
 const confirmacao_senha = document.getElementById('confirmacao_senha');
-const botao = domcument.getElementById('botao');
+const botao = document.getElementById('botao');
+const nomes = [];
+const emails = [];
+const senhas = [];
+let contador = 0;
 
-
+document.getElementById('botao').disabled = true;
 
 
 form.addEventListener('submit', (e) =>{
@@ -13,6 +17,27 @@ form.addEventListener('submit', (e) =>{
     checkInputs();
     
     
+    if(nomes.includes(usuario.value)){
+        errorValidation(usuario, 'Usuário já existente');
+        document.getElementById('botao').disabled = true;
+    }
+    if(emails.includes(email.value)){
+        errorValidation(email, 'Email já cadastrado');
+        document.getElementById('botao').disabled = true;
+    }
+    if (!emails.includes(email.value) && !nomes.includes(usuario.value)) {
+        nomes[contador] = usuario.value;
+        emails[contador] = email.value;
+        contador ++;
+        usuario.value = '';
+        email.value = '';
+        senha.value = '';
+        confirmacao_senha.value = '';
+        usuario.parentElement.className = 'controle_form';
+        email.parentElement.className = 'controle_form';
+        senha.parentElement.className = 'controle_form';
+        confirmacao_senha.parentElement.className = 'controle_form';
+    }
 })
 
 
@@ -47,32 +72,40 @@ function Validation_usuario (usuarioValue){
 function Validation_email(emailValue){
     if(emailValue === ''){
         errorValidation(email, 'Preencha esse campo');
+        document.getElementById('botao').disabled = true;
     } else if (emailValue.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)){
         successValidation(email);
     }else{
         errorValidation(email, 'informe um email válido');
+        document.getElementById('botao').disabled = true;
     }
 
 }
 function Validation_senha(senhaValue){
     if(senhaValue === ''){
         errorValidation(senha, 'Preencha esse campo');
+        document.getElementById('botao').disabled = true;
     }else if(senhaValue.length < 8){
-        errorValidation(senha, 'A senha deve ter no mínimo 8 caracteres')
+        errorValidation(senha, 'A senha deve ter no mínimo 8 caracteres');
+        document.getElementById('botao').disabled = true;
     } 
     else{
         successValidation(senha);
+        
     }
 }
 
 function Validation_confirmacao(confirmacao_senhaValue,senhaValue){
     if(confirmacao_senhaValue === ''){
         errorValidation(confirmacao_senha, 'Preencha esse campo');
+        document.getElementById('botao').disabled = true;
     }else if(confirmacao_senhaValue !== senhaValue){
         errorValidation(confirmacao_senha, 'As senhas devem ser iguais');
+        document.getElementById('botao').disabled = true;
     }
     else{
         successValidation(confirmacao_senha);
+        document.getElementById('botao').disabled = false;
     }
 
 }
